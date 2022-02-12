@@ -1,0 +1,55 @@
+﻿<Window x:Class="ParabellumDeveloperTools.AssembleCTERelease"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" 
+        Closing="AssembleCTEReleaseOnClose"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParabellumDeveloperTools"
+        xmlns:gif="http://wpfanimatedgif.codeplex.com"
+        mc:Ignorable="d"
+        Title="Assemble CTE Release" Height="450" Width="800">
+    <Grid>
+        <Button Name="ButtonAssemble" Background="White" 
+        BorderBrush="Black" BorderThickness="1" 
+        Click="ButtonAssembleEventClick" ClickMode="Press" HorizontalAlignment="Left" Width="196" FontFamily="Futura PT Light" FontSize="30" Margin="573,352,0,10">
+            Assemble
+        </Button>
+        <Label  FontFamily="Futura PT" FontSize="40" Margin="222,10,197,346">Assemble CTE Release</Label>
+        <Label  FontFamily="Futura PT Light" FontSize="20" Margin="15,80,571,290">Target mod folder path:</Label>
+        <TextBox Name="TextBoxModPath" Margin="200,90,75,299">
+            D:\SteamLibrary\steamapps\common\MountBlade Warband\Modules\Parabellum Experimental
+        </TextBox>
+        <Label  FontFamily="Futura PT Light" FontSize="20" Margin="72,119,514,251" Content="Version number:"/>
+        <TextBox x:Name="TextBoxVersionNumber" Margin="200,125,8,261" Text="1.400" FontSize="18" BorderBrush="{x:Null}" SelectionBrush="Black" Background="{x:Null}" BorderThickness="0"/>
+        <Label  FontFamily="Futura PT Light" FontSize="20" Margin="601,158,26,212" Content="Delete file copies:"/>
+        <CheckBox x:Name="CheckBoxRemoveCopies" Margin="747,171,-15,220" 
+            Content="" IsThreeState="False"
+            Checked="CheckBoxRemoveCopiesEventChecked" Unchecked="CheckBoxRemoveCopiesEventUnchecked" Height="28" IsChecked="True"/>
+        <Label  FontFamily="Futura PT Light" FontSize="20" Margin="613,191,14,179" Content="Delete .psd files:"/>
+        <CheckBox x:Name="CheckBoxRemovePsdFiles" Margin="747,204,-15,187" 
+            Content="" IsThreeState="False"
+            Checked="CheckBoxRemovePsdFilesChecked" Unchecked="CheckBoxRemovePsdFilesUnchecked" Height="28" IsChecked="True"/>
+        <Label  FontFamily="Futura PT Light" FontSize="20" Margin="550,225,11,145" Content="Delete Morgh's Backups:"/>
+        <CheckBox x:Name="CheckBoxRemoveMorghsBackups" Margin="747,238,-15,153" 
+            Content="" IsThreeState="False"
+            Checked="CheckBoxRemoveMorghsBackupsChecked" Unchecked="CheckBoxRemoveMorghsBackupsUnchecked" Height="28" IsChecked="True"/>
+        <Label  FontFamily="Futura PT Light" FontSize="20" Margin="48,158,552,212" Content="Create mod folder:"/>
+        <CheckBox x:Name="CheckBoxCreateModFolder" Margin="202,171,530,220" 
+            Content="" IsThreeState="False"
+            Checked="CheckBoxCreateModFolderChecked" Unchecked="CheckBoxCreateModFolderUnchecked" Height="28" IsChecked="True"/>
+        <Label  FontFamily="Futura PT Light" FontSize="20" Margin="9,190,571,180" Content="Create .7z mod archive:"/>
+        <CheckBox x:Name="CheckBoxCreateModArchive" Margin="202,203,530,188" 
+            Content="" IsThreeState="False"
+            Checked="CheckBoxCreateModArchiveChecked" Unchecked="CheckBoxCreateModArchiveUnchecked" Height="28" IsChecked="True"/>
+        <Button x:Name="ButtonBrowse" Background="White" 
+            BorderBrush="Black" BorderThickness="1" 
+            Click="ButtonBrowseEventClick" ClickMode="Press" HorizontalAlignment="Left" Width="70" FontFamily="Futura PT Light" FontSize="18" 
+            Margin="712,85,0,292" Content="Browse"/>
+        <Label  x:Name="LabelAssemblingState" FontFamily="Futura PT" FontSize="25" Margin="162,356,233,14"/>
+        <Image x:Name="LoadingIcon1"
+               gif:ImageBehavior.AutoStart="False"
+               gif:ImageBehavior.AnimatedSource="Artassets/LoadingIcon1.gif" Margin="91,339,614,-8" Opacity="0" />
+    </Grid>
+</Window>
